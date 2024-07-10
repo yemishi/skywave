@@ -1,2 +1,2 @@
 # skywave
-An weather app music w spotify
+An app for weather and music suggest w spotify
