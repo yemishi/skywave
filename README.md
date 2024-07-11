@@ -175,3 +175,11 @@ O deploy desta aplicação foi realizado na plataforma [Render](https://render.c
 ### Responsividade
  
  A aplicação é responsiva e pode ser acessada também no aparelho celular.
+
+#### Visualização em Desktop
+
+ ![Mobile Screenshot](https://github.com/yemishi/skywave/blob/main/frontend/public/screenshots/desktop.png)
+ 
+#### Visualização em Mobile
+
+ ![Mobile Screenshot](https://github.com/yemishi/skywave/blob/main/frontend/public/screenshots/mobile.png)
