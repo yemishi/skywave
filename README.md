@@ -181,4 +181,4 @@ O deploy desta aplicação foi realizado na plataforma [Render](https://render.c
  ![Mobile Screenshot](https://github.com/yemishi/skywave/blob/main/frontend/public/screenshots/desktop.png)
  
 #### Visualização em Mobile
- <img src="https://github.com/yemishi/skywave/blob/main/frontend/public/screenshots/mobile.png" alt="Mobile Screenshot" style="max-width:373px;">
+ <img src="https://github.com/yemishi/skywave/blob/main/frontend/public/screenshots/mobile.png" alt="Mobile Screenshot" style="width:373px;">
