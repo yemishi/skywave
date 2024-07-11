@@ -24,6 +24,8 @@
 
 ## Description
 
+Backend para teste técnico de vaga para de Tech Lead.
+
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Installation

@@ -24,7 +24,7 @@ export class AppController {
     } catch (error) {
       return {
         error: true,
-        message: 'We have an problem trying to get data.',
+        message: 'We had a problem trying to get the data.',
       };
     }
   }

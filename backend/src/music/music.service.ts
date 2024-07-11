@@ -21,9 +21,7 @@ export class MusicService {
       });
   }
 
-  async getMusicSuggestion(
-    temp: any /*Number type doesn't work */,
-  ): Promise<any> /* {playlist:string; track:string} doesn't work*/ {
+  async getMusicSuggestion(temp: any): Promise<any> {
     const genre = temp > 25 ? 'pop' : temp >= 10 ? 'rock' : 'classical';
 
     const playlists = await this.spotifyApi.searchPlaylists(genre, {

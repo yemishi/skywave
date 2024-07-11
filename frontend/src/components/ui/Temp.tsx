@@ -22,7 +22,7 @@ export default function Temp({
          lg:grid-areas-tempLayoutLg"
       >
         <img
-          src={`/src/icons/${icon}.svg`}
+          src={`/icons/${icon}.svg`}
           className="w-44 grid-in-icon hidden lg:block"
           alt="weather icon"
         />
