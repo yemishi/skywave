@@ -14,7 +14,7 @@ Este frontend foi desenvolvido para consumir a API de sugestão de músicas base
 O deploy do frontend foi feito na plataforma Vercel, escolhida por sua facilidade de uso e integração com o GitHub e gratuidade no uso e disponibilização.
 
 ### URL de Produção
-A aplicação frontend está disponível na seguinte URL: [https://skywave-ll41efqld-yemishis-projects.vercel.app/](https://skywave-ll41efqld-yemishis-projects.vercel.app/)
+A aplicação frontend está disponível na seguinte URL: [https://skywave-gamma.vercel.app/](https://skywave-gamma.vercel.app/)
 
 ### Consumo da API
 O frontend consome a API aberta hospedada no Render, através da URL: [https://skywave.onrender.com/suggest-music](https://skywave.onrender.com/suggest-music), fazendo requisições para o endpoint de sugestão de músicas com base na cidade fornecida pelo usuário.
