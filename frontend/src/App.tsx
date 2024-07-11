@@ -42,7 +42,7 @@ const App = () => {
 
               <iframe
                 src={`https://open.spotify.com/embed/track/${data.track}`}
-                className="w-full h-full lg:h-[200px] "
+                className="w-full h-full lg:h-[200px]"
               />
             </AnimatedDiv>
 
