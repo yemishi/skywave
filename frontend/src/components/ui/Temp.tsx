@@ -26,19 +26,20 @@ export default function Temp({
           className="w-44 grid-in-icon hidden lg:block"
           alt="weather icon"
         />
-        <span className="text-white row-span- grid-in-desc lg:text-6xl lg:ml-6 first-letter:uppercase">
+        <h1 className="text-white grid-in-desc lg:text-6xl lg:ml-6 first-letter:uppercase">
           {description}
-        </span>
+        </h1>
+
         <span className="text-7xl after:content-['°C'] after:font-semibold after:absolute after:text-xl grid-in-temp lg:text-6xl">
           {formattedTemp(temp)}
         </span>
 
-        <span className="flex self-center gap-4 lg:font-semibold grid-in-tempHL lg:text-xl lg:ml-1 mb-auto">
+        <div className="flex self-center gap-4 lg:font-semibold grid-in-tempHL lg:text-xl lg:ml-1 mb-auto">
           <span>H {formattedTemp(temp_max)}°</span>
           <span>L {formattedTemp(temp_min)}°</span>
-        </span>
+        </div>
 
-        <span className="text-white lg:grid-area-location lg:hidden">
+        <span className="text-white lg:grid-area-location lg:absolute lg:top-5 lg:left-5 lg:font-bold lg:text-xl">
           {name} - {country}
         </span>
       </AnimatedDiv>
