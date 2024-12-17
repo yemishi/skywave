@@ -21,11 +21,11 @@ body {
 
 ::-webkit-scrollbar {
   width: 10px;
-  background-color: #f5cbc84d;
+  background-color: rgba(109, 247, 153, 0.26)
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 200, 0, 0.611);
+  background-color: rgb(34, 201, 87);
   background-image: -webkit-linear-gradient(
     45deg,
     rgba(0, 123, 210, 0.2) 25%,

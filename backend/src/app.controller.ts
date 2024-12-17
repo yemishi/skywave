@@ -7,7 +7,7 @@ export class AppController {
   constructor(
     private readonly weatherService: WeatherService,
     private readonly musicService: MusicService,
-  ) {}
+  ) { }
 
   @Get('suggest-music')
   async suggestMusic(
@@ -17,14 +17,15 @@ export class AppController {
       const data = await this.weatherService.getTemperature(city);
 
       if ('error' in data) return data;
+
       const musicSuggestion = await this.musicService.getMusicSuggestion(
-        data.temp,
+        Math.floor(data.temp),
       );
-      return { ...musicSuggestion, ...data };
+      return { musicInfo: { ...musicSuggestion }, weatherInfo: { ...data } };
     } catch (error) {
       return {
         error: true,
-        message: 'We had a problem trying to get the data.',
+        message: error.message || 'We had a problem trying to get the data.',
       };
     }
   }

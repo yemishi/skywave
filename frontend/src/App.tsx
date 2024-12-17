@@ -8,12 +8,15 @@ import AnimatedDiv from "./components/ui/AnimatedDIv";
 const App = () => {
   const [location, setLocation] = useState("");
   const { refetch, data, isLoading } = UseQuery({ location });
+
   const refreshBeforeLg =
     "lg:before:absolute lg:before:bg-purple-800 lg:before:h-full  lg:before:w-1 lg:before:left-0 lg:before:top-[2px] lg:before:rounded-l-lg ";
+
+  const errorMsg = data && ((data.error && data.message) || (data.musicInfo.error && data.musicInfo.message) || (data.weatherInfo.error && data.weatherInfo.message))
   return (
     <div className="h-screen w-full flex flex-col items-center gap-5 backdrop-blur-sm p-4 overflow-x-hidden">
       <SearchBar
-        error={data?.error ? data.message : ""}
+        error={errorMsg || ""}
         refetch={refetch}
         location={location}
         setLocation={setLocation}
@@ -29,7 +32,7 @@ const App = () => {
       )}
       {data && !data.error && (
         <div className="w-full h-full flex justify-around flex-col gap-10 mt-16 z-10">
-          <Temp {...data} />
+          <Temp {...data.weatherInfo} key={data.musicInfo.track} />
 
           <div
             className="w-full h-full max-w-7xl ml-auto mr-auto gap-2 grid grid-rows-[100px_1fr_270px] md:grid-rows-[170px_1fr_400px] lg:grid-cols-[1fr_0_2fr] 
@@ -41,7 +44,7 @@ const App = () => {
               </h2>
 
               <iframe
-                src={`https://open.spotify.com/embed/track/${data.track}`}
+                src={`https://open.spotify.com/embed/track/${data.musicInfo.track}`}
                 className="w-full h-full lg:h-[200px]"
               />
             </AnimatedDiv>
@@ -62,7 +65,7 @@ const App = () => {
                 🎧 Tune in to Your Weather Playlist 🌤️🎵
               </h2>
               <iframe
-                src={`https://open.spotify.com/embed/playlist/${data.playlist}`}
+                src={`https://open.spotify.com/embed/playlist/${data.musicInfo.playlist}`}
                 className="w-full h-full"
               />
             </AnimatedDiv>

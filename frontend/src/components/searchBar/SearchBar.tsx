@@ -28,14 +28,13 @@ export default function SearchBar({
 
   const filteredSuggestions = inputValue
     ? suggests.filter((suggestion) =>
-        suggestion.toLowerCase().startsWith(inputValue.toLowerCase())
-      )
+      suggestion.toLowerCase().startsWith(inputValue.toLowerCase())
+    )
     : suggests;
   return (
     <div
-      className={`flex flex-col w-3/4 max-w-[550px] self-center h-2/4 font-semibold md:text-lg lg:text-xl  absolute ${
-        location ? "top-5" : " top-2/3 -translate-y-2/3 lg:top-2/4 lg:-translate-y-2/4"
-      } duration-150 `}
+      className={`flex flex-col w-3/4 max-w-[550px] self-center h-2/4 font-semibold md:text-lg lg:text-xl absolute ${location ? "top-5" : " top-2/3 -translate-y-2/3 lg:top-2/4 lg:-translate-y-2/4"
+        } duration-150 `}
     >
       <form onSubmit={refetchData}>
         <div className="flex relative">
@@ -44,19 +43,18 @@ export default function SearchBar({
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             placeholder="A good place"
-            className={`w-full h-full outline-none bg-white bg-opacity-40 hover:bg-opacity-35 rounded-md pr-8 duration-150 ${border} ${
-              location ? "p-2 md:p-3" : "p-3 md:p-4 rounded-b-none border-b-0"
-            }`}
-          />
-          <button type="submit">
-            <FaMagnifyingGlass
-              className={`absolute right-2 top-2/4 -translate-y-2/4 size-5 text-white ${
-                location
-                  ? "hover:text-emerald-300 active:scale-90 duration-150"
-                  : "opacity-50"
+            className={`w-full h-full outline-none bg-white bg-opacity-40 hover:bg-opacity-35 rounded-md !pr-8 duration-150 ${border} ${location ? "p-2 md:p-3" : "p-3 md:p-4 rounded-b-none border-b-0"
               }`}
-            />
-          </button>
+          />
+          <span className="absolute right-2 top-2/4 -translate-y-2/4 size-5 font-lato flex justify-center items-center opacity-95 text-white">
+
+            {inputValue ? <button type="button" onClick={() => setInputValue("")}>
+              X
+            </button> : <FaMagnifyingGlass
+              onClick={() => console.log(location)}
+
+            />}
+          </span>
         </div>
         {error && (
           <span className="self-center text-center text-red-400 mt-2">
@@ -66,7 +64,7 @@ export default function SearchBar({
 
         {!location && (
           <ul
-            className={`flex flex-col  bg-white bg-opacity-40 max-h-[201px] md:max-h-[310px] lg:max-h-[420px]  overflow-y-scroll  rounded-b-md ${border}`}
+            className={`flex flex-col bg-white bg-opacity-40 max-h-[201px] md:max-h-[310px] lg:max-h-[420px]  overflow-y-scroll  rounded-b-md ${border}`}
           >
             {filteredSuggestions.map((e, i) => {
               return (

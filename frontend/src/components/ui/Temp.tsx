@@ -1,5 +1,5 @@
 import { AnimatePresence } from "framer-motion";
-import { ResponseType } from "../../types";
+import { WeatherInfoType } from "../../types";
 import AnimatedDiv from "./AnimatedDIv";
 
 export default function Temp({
@@ -9,13 +9,13 @@ export default function Temp({
   temp_min,
   country,
   name,
-  track,
+  key,
   icon,
-}: ResponseType) {
+}: WeatherInfoType & { key: string }) {
   const formattedTemp = (temp: number) => `${Math.floor(temp)}`;
   return (
     <AnimatePresence mode="wait">
-      <div key={track} className="flex flex-col items-center">
+      <div key={key} className="flex flex-col items-center">
         <AnimatedDiv
           toRight
           className="flex flex-col items-center lg:items-end lg:grid self-center rounded-3xl text-center font-montserrat lg:font-lato gap-2

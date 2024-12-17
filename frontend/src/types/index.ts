@@ -1,4 +1,8 @@
 interface ResponseType {
+  musicInfo: MusicInfoType
+  weatherInfo: WeatherInfoType
+}
+type WeatherInfoType = {
   feels_like: string;
   name: string;
   country: string;
@@ -6,10 +10,14 @@ interface ResponseType {
   temp: number;
   temp_max: number;
   temp_min: number;
+  icon: string;
+  error?: boolean;
+  message?: string
+}
+type MusicInfoType = {
   track: string;
   playlist: string;
-  icon: string;
-  error: false;
+  error?: boolean;
+  message?: string
 }
-
-export type { ResponseType };
+export type { ResponseType, MusicInfoType, WeatherInfoType };
